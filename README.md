@@ -1,106 +1,74 @@
-AI-Powered Document Structuring & Data Extraction
+# AI‑Powered Document Structuring & Data Extraction
 
-This project automatically converts an unstructured PDF document into a structured Excel file.
-It was developed as part of the AI Intern – Document Structuring & Data Extraction Assignment. 
+Automatically convert an unstructured PDF into a well-structured Excel file. This project was built as part of the AI Intern — Document Structuring & Data Extraction assignment and provides both a CLI/Script interface and a Streamlit demo for interactive use.
 
-🔍 Objective
+Live demo: https://ai-doc-structuring-gjuvt4fsxe4mzbkqqxqueq.streamlit.app/
 
-The system extracts text from Data Input.pdf, detects key–value pairs, identifies logical sections, merges multi-line values, and generates a well-structured Output.xlsx similar to the provided Expected Output.xlsx.
+## Key features
+- Extracts text from PDF pages using robust parsing (pdfplumber)
+- Detects key:value pairs using rules and regular expressions
+- Automatically detects logical sections / headings
+- Merges multi-line and complex values into single cells
+- Adds contextual comments for each key:value pair
+- Preserves original wording (no summarization)
+- Exports a clean Excel file with columns:
+  - Section, Key, Value, Comments, Page, Raw Text
 
-🚀 Live Demo
+## Quick demo
+1. Open the live demo link above
+2. Upload `Data Input.pdf`
+3. Click “Convert to Excel”
+4. Download the generated `Output.xlsx`
 
-Use the web app here:
-👉 (https://ai-doc-structuring-gjuvt4fsxe4mzbkqqxqueq.streamlit.app/)
+## Requirements
+- Python 3.8+
+- See `requirements.txt` for pinned dependencies (pdfplumber, pandas, openpyxl, regex, streamlit, etc.)
 
-Upload the PDF → Click “Convert to Excel” → Download the structured file.
-
-✨ Features
-
-Extracts 100% content from the PDF
-
-Identifies key:value pairs using rules + regex
-
-Automatically detects sections/headings
-
-Merges multi-line or complex values
-
-Adds context/comments for each key:value
-
-Preserves original wording without summarization
-
-Outputs a clean Excel file with:
-
-Section
-
-Key
-
-Value
-
-Comments
-
-Page
-
-Raw Text
-
-📦 Folder Structure
-ai-doc-structuring/
-│
-├── src/
-│   ├── pdf_parser.py
-│   ├── extractor.py
-│   ├── exporter.py
-│   └── main.py
-│
-├── demo_app.py
-├── requirements.txt
-└── data/
-    ├── Data Input.pdf           (optional)
-    └── Expected Output.xlsx     (reference)
-
-🛠 Technologies
-
-Python
-
-pdfplumber
-
-pandas
-
-openpyxl
-
-regex
-
-Streamlit (for live demo)
-
-▶️ Run Locally
-1. Create environment
-python -m venv venv
-venv\Scripts\activate
+## Install & Run (Local)
+1. Create a virtual environment
+   - macOS / Linux:
+     python -m venv venv
+     source venv/bin/activate
+   - Windows (Powershell):
+     python -m venv venv
+     .\venv\Scripts\Activate.ps1
 
 2. Install dependencies
-pip install -r requirements.txt
+   pip install -r requirements.txt
 
-3. Run the extraction script
-python src/main.py
+3. Run the extraction script (CLI)
+   python src/main.py
 
-4. Run the Streamlit app
-streamlit run demo_app.py
+4. Run the Streamlit app (interactive)
+   streamlit run demo_app.py
 
-📤 Deployment
+## Folder structure
+ai-doc-structuring/
+├── src/
+│   ├── pdf_parser.py     # PDF reading and page extraction
+│   ├── extractor.py      # Key:value detection and sectioning logic
+│   ├── exporter.py       # Excel export (openpyxl / pandas)
+│   └── main.py           # CLI entrypoint / orchestration
+├── demo_app.py           # Streamlit web app for manual use
+├── requirements.txt
+└── data/
+    ├── Data Input.pdf           (optional / sample input)
+    └── Expected Output.xlsx     (reference output)
 
-The app is deployed using Streamlit Cloud.
-You can directly access the web interface from the link provided above.
+## Deployment
+- The app is deployed on Streamlit Cloud. Use the demo link above to access the web UI without setup.
+- To deploy your own instance, connect this repository to Streamlit Cloud and set the run command to:
+  streamlit run demo_app.py
 
-📁 Deliverables Provided
+## Deliverables
+- Full source code
+- README with usage instructions
+- Streamlit live demo
+- Example `Output.xlsx` generated from the provided PDF
 
-Full source code
-
-README with instructions
-
-Streamlit live demo
-
-Final Output.xlsx generated from the provided PDF
-
-👤 Author
-
-Dev Gokha
+## Author
+Dev Gokha  
 AI/ML Developer | MERN Stack | Data Analytics | Python
+
+## License
+(Include a license of your choice, e.g., MIT) — add `LICENSE` file if needed.
