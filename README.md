@@ -70,5 +70,3 @@ ai-doc-structuring/
 Dev Gokha  
 AI/ML Developer | MERN Stack | Data Analytics | Python
 
-## License
-(Include a license of your choice, e.g., MIT) — add `LICENSE` file if needed.
