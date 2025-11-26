@@ -43,22 +43,17 @@ Live demo: https://ai-doc-structuring-gjuvt4fsxe4mzbkqqxqueq.streamlit.app/
    streamlit run demo_app.py
 
 ## Folder structure
-ai-doc-structuring
-↓
-  src
-  ↓
-    pdf_parser.py        → PDF reading and page extraction
-    extractor.py         → Key:value detection and sectioning logic
-    exporter.py          → Excel export (openpyxl / pandas)
-    main.py              → CLI entrypoint / orchestration
-
-  demo_app.py            → Streamlit web app for manual use
-  requirements.txt
-
-  data
-  ↓
-    Data Input.pdf       → Optional sample input
-    Expected Output.xlsx → Reference output
+ai-doc-structuring/
+src/
+  pdf_parser-py – PDF reading and page extraction
+  extractor-py – Key:value detection and sectioning logic
+  exporter-py – Excel export (openpyxl / pandas)
+main-py – CLI entrypoint / orchestration
+demo_app-py – Streamlit web app for manual use
+requirements-txt
+data/
+  Data-Input-pdf – Optional sample input
+Expected-Output-xlsx – Reference output
 
 ## Deployment
 - The app is deployed on Streamlit Cloud. Use the demo link above to access the web UI without setup.
